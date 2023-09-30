@@ -8,7 +8,6 @@ if (!isset($_SESSION['usuario_logueado'])) /*&& ($_SESSION['usuario_logueado']==
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +45,7 @@ if (!isset($_SESSION['usuario_logueado'])) /*&& ($_SESSION['usuario_logueado']==
             or die("No se puede conectar con el servidor");
         mysqli_select_db($conexion, "$base_db")
             or die("No se puede seleccionar la base de datos");
-        $instruccion = "select * from noticias order by fecha desc";
+        $instruccion = "select * from usuarios order by nombre desc";
         //trabajar con super usuario y discriminacion de usuarios
         /*
         if(isset($_SESSION['SUPER']))

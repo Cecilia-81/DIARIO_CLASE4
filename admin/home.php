@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario_logueado'])) /*&& ($_SESSION['usuario_logueado']==
  no esta logueado lo manda al index tambien si en lugar de SI coloca admin, solo puede ingresar
  a la pagina el administrador*/
     header("location:index.php"); //lo mando al index
-
+//pagina de inicio donde tengo el menu
 ?>
 
 

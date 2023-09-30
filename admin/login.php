@@ -9,7 +9,7 @@
             or die ("No se puede conectar con el servidor");
     mysqli_select_db ($conexion,"$base_db")
         or die ("No se puede seleccionar la base de datos");
-    $salt = substr ($usuario, 0, 2);
+    $salt = substr ($usuario, 0, 4);
     /*crypt es una funci�n que encripta un string dado ($usuario) a partir de un substring
     ($salt) que lo toma como semilla de encriptaci�n en este caso son dos caracteres*/
     

@@ -1,7 +1,7 @@
 <?php
 session_start(); //inicio la sesion
-if (isset($_SESSION['usuario_logueado']))
-    header("location:home.php");
+if (isset($_SESSION['usuario_logueado']))// si el usuario esta logueado entra
+    header("location:home.php");// mando al panel principal
 ?>
 
 <!DOCTYPE html>
@@ -16,20 +16,12 @@ if (isset($_SESSION['usuario_logueado']))
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid" style="background-color: #98AFC7;">
+       <!-- <div class="row">
             <div>
-                <?php
-                if (isset($_SESSION['mensaje'])) //aca pregunto si la variable isset de session existe
-                {
-                    print("<p>" . $_SESSION['mensaje'] . "</p>");
-                    /*Con echo debo usar comillas dobles si o si, con print 
-                    puedo usar simple o doble*/
-                    unset($_SESSION['mensaje']);/*luego de mostrar el mensaje lo borro al apretar f5*/
-                }
-                ?>
+               
 
-                 <!--<form action="login.php" method="post">
+                 <form action="login.php" method="post">
                  <div class="mb-3">
                     <label for="USUARIO" class="form-label">Usuario</label>
                     <input type="text" class="form-control" id="usuario" name="usuario"placeholder="usuario"required> 
@@ -41,7 +33,7 @@ if (isset($_SESSION['usuario_logueado']))
                 <div class="mb-3">
                     <input type="submit" class="btn btn-primary" id="enviar" name="enviar" value="Loguearse"> 
                 </div>
-            </form>
+                 </form>
 
             </div>
         </div>-->
@@ -57,7 +49,15 @@ if (isset($_SESSION['usuario_logueado']))
 
                                     <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                     <p class="text-white-50 mb-5">Ingrese su Usuario y Contraseña</p>
-
+                                    <?php
+                                        if (isset($_SESSION['mensaje'])) //aca pregunto si la variable isset de session existe
+                                        {
+                                            print("<p class='text-danger'>" . $_SESSION['mensaje'] ." </p>");
+                                            /*Con echo debo usar comillas dobles si o si, con print 
+                                            puedo usar simple o doble*/
+                                            unset($_SESSION['mensaje']);/*luego de mostrar el mensaje lo borro al apretar f5*/
+                                        }
+                                        ?>
                                     <div class="form-outline form-white mb-4">
                                         <label for="USUARIO" class="form-label">Usuario</label>
                                         <input type="text" class="form-control" id="usuario" name="usuario" placeholder="usuario" required>
